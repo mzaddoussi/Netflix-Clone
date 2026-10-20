@@ -28,7 +28,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       easing: theme.transitions.easing.easeIn,
     }),
     "&:focus": {
-      width: "auto",
+      width: 220,
+      paddingRight: theme.spacing(1),
     },
   },
 }));
@@ -54,7 +55,7 @@ export default function SearchBox() {
       </SearchIconWrapper>
       <StyledInputBase
         inputRef={searchInputRef}
-        placeholder="Titles, people, genres"
+        placeholder="Search movies & TV shows"
         inputProps={{
           "aria-label": "search",
           onFocus: () => {

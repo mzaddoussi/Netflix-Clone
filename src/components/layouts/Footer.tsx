@@ -4,6 +4,8 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <Box
       component="footer"
@@ -11,7 +13,9 @@ export default function Footer() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        height: 150,
+        alignItems: "center",
+        gap: 1,
+        height: 180,
         bgcolor: "inherit",
         px: "60px",
       }}
@@ -19,6 +23,7 @@ export default function Footer() {
       <Divider
         component="div"
         sx={{
+          width: "100%",
           "::before, ::after": { top: "0%" },
         }}
       >
@@ -26,14 +31,17 @@ export default function Footer() {
           Developed by{" "}
           <Link
             target="_blank"
-            underline="none"
-            sx={{ color: "text.primary" }}
+            underline="hover"
+            sx={{ color: "text.primary", fontWeight: 600 }}
             href="https://github.com/mzaddoussi"
           >
-            Mostafa zaddoussi
+            Mostafa Zaddoussi
           </Link>
         </Typography>
       </Divider>
+      <Typography color="grey.700" variant="body2">
+        © {year} Netflix Clone · Built with React, TypeScript & TMDB
+      </Typography>
     </Box>
   );
 }
